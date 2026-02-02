@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Scale Simulator | Bulbul Computer Centre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scale-selector">
+        <button class="tab-btn active" id="tab1">Simple Scale</button>
+        <button class="tab-btn" id="tab2">3D Scale</button>
+    </div>
+
+    <div id="view1" class="scale-view active">
+        <h2>⚖️ Simple Balance</h2>
+        <div class="beam-wrapper-1">
+            <div class="beam-1" id="beam1">
+                <div class="plate-1 left-1"></div>
+                <div class="plate-1 right-1"></div>
+            </div>
+            <div class="pivot-1"></div>
+        </div>
+        <div class="base-1"></div>
+    </div>
+
+    <div id="view2" class="scale-view">
+        <h2>⚖️ 3D Balance</h2>
+        <div class="scale-stage-2">
+            <div class="pillar-assembly-2">
+                <div class="finial-top-2"></div>
+                <div class="vertical-stick-2"></div>
+                <div class="base-bottom-2"></div>
+            </div>
+            <div class="beam-pivot-2" id="beam2">
+                <svg viewBox="0 0 440 60" class="beam-svg-2">
+                    <path d="M20,35 Q110,0 220,35 Q330,0 420,35" fill="none" stroke="#4b44d4" stroke-width="15" stroke-linecap="round"/>
+                    <circle cx="20" cy="35" r="5" fill="#fbc02d" />
+                    <circle cx="420" cy="35" r="5" fill="#fbc02d" />
+                </svg>
+                <div class="hanging-pan-2 left-pan-2" id="left-hang2">
+                    <svg class="chain-links-2"><path d="M40,0 L5,130 M40,0 L75,130 M40,0 L40,130" /></svg>
+                    <div class="gold-bowl-2"></div>
+                </div>
+                <div class="hanging-pan-2 right-pan-2" id="right-hang2">
+                    <svg class="chain-links-2"><path d="M40,0 L5,130 M40,0 L75,130 M40,0 L40,130" /></svg>
+                    <div class="gold-bowl-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls-panel">
+        <div class="control-unit">
+            <div class="side-label">Left Side</div>
+            <div class="btn-group">
+                <button class="action-btn" id="addL">+</button>
+                <button class="action-btn" id="subL">-</button>
+            </div>
+            <div class="mass-val"><span id="l-mass">0</span> kg</div>
+        </div>
+
+        <div class="control-unit">
+            <div class="side-label">Right Side</div>
+            <div class="btn-group">
+                <button class="action-btn" id="addR">+</button>
+                <button class="action-btn" id="subR">-</button>
+            </div>
+            <div class="mass-val"><span id="r-mass">0</span> kg</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 

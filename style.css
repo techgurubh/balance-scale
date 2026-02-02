@@ -19,12 +19,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation Tabs */
+/* NAVIGATION */
 .scale-selector {
     margin-bottom: 30px;
     display: flex;
     gap: 10px;
-    z-index: 10;
 }
 
 .tab-btn {
@@ -49,7 +48,7 @@ body {
 
 .scale-view.active { display: flex; }
 
-/* --- SIMPLE SCALE (1) --- */
+/* --- SCALE 1 (SIMPLE) --- */
 .beam-wrapper-1 {
     width: var(--scale-width-1);
     height: 40px;
@@ -57,27 +56,20 @@ body {
     margin-bottom: 25px;
 }
 .beam-1 {
-    width: 100%;
-    height: 10px;
-    background: #00cde8;
-    border-radius: 5px;
+    width: 100%; height: 10px;
+    background: #00cde8; border-radius: 5px;
     transform-origin: center;
     transition: transform 0.4s ease;
-    position: relative;
 }
 .pivot-1 {
-    position: absolute;
-    left: 50%; top: -18px;
+    position: absolute; left: 50%; top: -18px;
     transform: translateX(-50%);
     width: 36px; height: 36px;
     background: #fff; border-radius: 50%;
-    z-index: 5;
 }
 .plate-1 {
-    width: clamp(80px, 22vw, 140px);
-    height: 22px;
-    background: #ffc93c;
-    border-radius: 0 0 50px 50px;
+    width: clamp(80px, 22vw, 140px); height: 22px;
+    background: #ffc93c; border-radius: 0 0 50px 50px;
     position: absolute; top: -12px;
 }
 .left-1 { left: -6px; }
@@ -88,7 +80,7 @@ body {
     clip-path: polygon(15% 100%, 85% 100%, 65% 0%, 35% 0%);
 }
 
-/* --- 3D SCALE (2) --- */
+/* --- SCALE 2 (3D) --- */
 .scale-stage-2 {
     position: relative;
     width: 100%; max-width: 500px;
@@ -100,18 +92,28 @@ body {
     display: flex; flex-direction: column; align-items: center;
     z-index: 1;
 }
+.finial-top-2 {
+    width: 16px; height: 26px;
+    background: var(--gold); border-radius: 50% 50% 20% 20%;
+    margin-bottom: -5px; box-shadow: inset -2px -2px 5px rgba(0,0,0,0.3);
+}
 .vertical-stick-2 {
     width: 20px; height: 210px;
     background: linear-gradient(to right, var(--purple-dark), var(--purple-main), #6b64f0);
     border-radius: 10px;
+}
+.base-bottom-2 {
+    width: 140px; height: 40px;
+    background: var(--purple-dark);
+    border-radius: 50% / 15px;
+    margin-top: -15px; box-shadow: 0 5px 15px rgba(0,0,0,0.8);
 }
 .beam-pivot-2 {
     position: absolute; bottom: 225px;
     width: 440px; height: 100px;
     transform-origin: center 15px;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2;
-    display: flex; justify-content: center;
+    z-index: 2; display: flex; justify-content: center;
 }
 .beam-svg-2 { width: 100%; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.4)); }
 .hanging-pan-2 {
@@ -134,15 +136,9 @@ body {
 
 /* --- CONTROLS --- */
 .controls-panel {
-    background: #0d1526;
-    padding: 20px;
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 85%; max-width: 400px;
-    margin-top: 30px;
-    border: 1px solid #1e2a44;
+    background: #0d1526; padding: 20px; border-radius: 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    width: 85%; max-width: 400px; margin-top: 30px; border: 1px solid #1e2a44;
 }
 .control-unit { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .action-btn {
@@ -150,10 +146,9 @@ body {
     width: 45px; height: 45px; border-radius: 10px;
     font-size: 22px; cursor: pointer;
 }
-.action-btn:active { transform: scale(0.9); background: #4e586b; }
+.action-btn:active { transform: scale(0.9); }
 .mass-val { font-size: 20px; font-weight: bold; }
 
 @media (max-width: 480px) {
     .scale-stage-2 { transform: scale(0.75); height: 300px; }
 }
-
